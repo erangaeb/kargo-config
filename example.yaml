@@ -1,0 +1,28 @@
+kind: APIService
+apiVersion: services.rahasak.dev/v1alpha1
+metadata:
+  name: example-api
+  labels:
+    app.kubernetes.io/name: example-api
+    app.kubernetes.io/version: 1.255.1-GO
+    rahasak.com/team: lambda
+spec:
+  apis:
+    - name: hello
+      version: v1beta
+      type: default
+  env:
+    - name: AMQP_MAIN_VHOST
+      value: servicecomm
+    - name: AMQP_OUT_ADDR
+      value: broker1.rabbitmq,broker2.rabbitmq,broker3.rabbitmq
+  replicas: 1
+  resources:
+    limits:
+      memory: '268435456'
+    requests:
+      memory: '268435456'
+      cpu: 50m
+  tag: 1.255.1-GO
+  team: lambda
+  httpsBackend: false
