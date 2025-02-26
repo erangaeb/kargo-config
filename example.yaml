@@ -4,7 +4,7 @@ metadata:
   name: example-api
   labels:
     app.kubernetes.io/name: example-api
-    app.kubernetes.io/version: 1.255.1-GO
+    app.kubernetes.io/version: 1.256.1-GO
     rahasak.com/team: lambda
 spec:
   apis:
@@ -23,6 +23,6 @@ spec:
     requests:
       memory: '268435456'
       cpu: 50m
-  tag: 1.255.1-GO
+  tag: 1.256.1-GO
   team: lambda
   httpsBackend: false
